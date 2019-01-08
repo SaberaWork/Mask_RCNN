@@ -2060,7 +2060,9 @@ class MaskRCNN():
         # Add multi-GPU support.
         if config.GPU_COUNT > 1:
             from mrcnn.parallel_model import ParallelModel
-            model = ParallelModel(model, config.GPU_COUNT)
+            #Sabera's EDIT!!!!
+            #model = ParallelModel(model, config.GPU_COUNT)
+            model = ParallelModel(model, 1)
 
         return model
 
